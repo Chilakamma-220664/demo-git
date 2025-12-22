@@ -9,7 +9,7 @@
             font-weight: bold;
             font-size: 12px;
             font-family: arial, sans-serif;
-            COLOR: blue;
+            color: blue;
         }
         
         h1 {
@@ -35,22 +35,12 @@
         .threat-box p1 {
             max-width: 600px;
         }
-        
-        .left-img {
-            float: left;
-            margin-left: 20px;
-        }
-        
-        .right-img {
-            float: right;
-            margin-left: 20px;
-        }
     </style>
 </head>
 
 <body style="background-color:gray">
     <h1 style="text-align:center">CYBER SECURITY AWARANESS WEBSITES</h1>
-    <h2>what is cyber security</h2>
+    <h3>what is cyber security</h3>
     <ul style="font-size:17px">
         <li>Cybersecurity is the practice of protecting systems, networks, and data from digital attacks, theft, or damage.
         </li>
@@ -130,7 +120,7 @@
 
 
     <h2 style="text-align:center;"><b>Cybersecurity Overview</b></h2>
-    <table border="5" bordercolr="black" bgcolor="violet" cellpadding="5" cellspacing="5" style="margin:0 auto;" border-color="yellow">
+    <table border="5" bordercolr="black" bgcolor="violet" cellpadding="3" cellspacing="3" style="margin:0 auto;" border-color="yellow">
         <tr>
             <th style="text-align:center;color:red;" bgcolor="aqua"><b>Category</b></th>
             <th style="text-align:center;color:red;" bgcolor="aqua"><b>Description</b></th>
@@ -170,8 +160,9 @@
         </tr>
 
     </table>
-    <h2 style="color:brown;text-align:center">INLINE TABLE</h2>
+    <h2 style="color:black;text-align:center">INLINE TABLE</h2>
     <table border="4" cellpadding="7" ,cellspacing="7" bgcolor="pink" style="margin:0 auto;">
+        <caption align="top" style="font-size:20px; color:chartreuse;">Common cyber threats</caption>
         <tr>
             <th style="color:red; text-align:center;">Attack Types</th>
             <th style="color:red; text-align:center;">Description</th>
@@ -193,8 +184,142 @@
             <td style="color:blue; text-align:center;">Strong password</td>
         </tr>
     </table>
+    <h2>INTERNAL CSS</h2>
+
+    <head>
+        <tittle></tittle>
+        <style>
+            h2 {
+                color: light blue;
+                text-align: center;
+            }
+            
+            th {
+                color: black;
+                font-size: 15px;
+                font-family: Arial, Helvetica, sans-serif;
+                text-align: center;
+            }
+            
+            tr {
+                font-size: 15px;
+                text-align: center;
+            }
+            
+            td {
+                font-size: 15px;
+                text-align: center;
+                color: black;
+                bgcolor="white"
+            }
+        </style>
+    </head>
+    <table border="4" cellpadding="5" cellspacimg="5" style="margin:0 auto" bgcolor="white;">
+        <caption align="top" style="font-size:20px; color:chartreuse;">Types of cybersecurity</caption>
+        <tr>
+            <th>Types</th>
+            <th>Focus Area</th>
+
+        </tr>
+        <tr>
+            <td>Network Security</td>
+            <td>Protects computer networks from intrusions and breaches
+            </td>
+        </tr>
+        <tr>
+            <td>Data Security</td>
+            <td>Ensures sensitive information is encrypted and safe
+            </td>
+
+        </tr>
+        <tr>
+            <td>Cloud Security</td>
+            <td>Safeguards data stored in cloud environments
+            </td>
+
+        </tr>
+        <tr>
+            <td>Endpoint Security</td>
+            <td>Protects devices like laptops, phones, and servers
+            </td>
+        </tr>
+    </table>
+    <h3 style="text-align:center; font-size:20px;">EXTERNAL CSS</h3>
+    <table style="margin:0 auto;" border="5" cellpadding="5" cellspacing="5" bgcolor="aqua">
+        <caption style="text-align:center; font-size:20px; color:chartreuse" align="top">Safety take for threats</caption>
+        <link rel="stylesheet" href="style.css">
+        <tr>
+            <th>Threats</th>
+            <th>Safety</th>
+        </tr>
+        <tr>
+            <td>Phishing</td>
+            <td>Verify email senders, don’t click unknown links</td>
+        </tr>
+        <tr>
+            <td>Malware</td>
+            <td>Install antivirus software, keep systems updated</td>
+        </tr>
+        <tr>
+            <td>Data Breaches</td>
+            <td>Use strong, unique passwords and enable two-factor authentication</td>
+        </tr>
+        <tr>
+            <td>DoS/DDoS Attacks</td>
+            <td>Use firewalls and intrusion detection systems
+            </td>
+        </tr>
+    </table>
     <h2 style="text-align:center;">Iframe form</h2>
-    <iframe src="c:\Users\B.Chilakamma\Documents\ll.jpeg" width="600" height="400" tittle="Example iframe" style="display:block; margin:0 auto;" ggigi></iframe>
+    <iframe src="c:\Users\B.Chilakamma\Documents\ll.jpeg" width="600" height="400" tittle="Example iframe" style="display:block; margin:0 auto;"></iframe>
+    <style>
+        .box {
+            font-size: 20px;
+            height: 500;
+            width: 500;
+        }
+    </style>
+    <div class="box">
+        <h2>cybersecurity-themed form</h2>
+        <form style="text-align:center;">
+            <label for="name">First name:</label>
+            <input type="text" id="name" name="Firstname" /><br/><br/>
+            <label for="name">Last name:</label>
+            <input type="text" id="name" name="Lastname" /><br/><br/>
+            <label for="email">Email:</label>
+            <input type="text" id="name" email="email" /><br/><br/>
+            <label for="mobile">MobileNo.:</label>
+            <input type="text" id="mobile" name="mobileNo"><br/><br/>
+            <label for="Password">Password:</label>
+            <input type="password" id="email" name="Password"><br/><br/>
+            <label for="male">Male:</label>
+            <input type="radio" id="male" name="male" /><br/><br/>
+            <label for="female">female:</label>
+            <input type="radio" id="female" name="female" /><br/><br/>
+            <label for="others">Others:</label>
+            <input type="radio" id="others" name="others" /><br/><br/>
+            <label for="Gender">Gender:</label>
+            <select id="gender" name="gender">
+                <option value="female">female</option>
+                <option value="male">male</option>
+                <option value="others">Others</option>
+            </select><br/><br/>
+            <label for="threats">Have you faced any cyber threat?:</label>
+            <select id="threats" name="threats">
+                <option value="Phishing">phishing</option>
+                <option value="Malware">malware</option>
+                <option value="data breaches">Data breaches</option>
+                <option value="Dos">Dos</option>
+            </select><br/><br/>
+            <label for="details">Details:</label>
+            <textarea id="deatils" name="details" rows="5"></textarea><br/><br/>
+            <input type="submit" name="submit" value="submit" />
+            <input type="reset" name="reset" value="reset" />
+            <input type="ok" name="ok" value="ok" />
+
+
+        </form>
+    </div>
 
 </body>
 
