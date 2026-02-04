@@ -1,93 +1,21 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-    <title>Cyber Security Registration</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #e6f2ff;
-        }
-        
-        .container {
-            width: 400px;
-            background-color: white;
-            padding: 20px;
-            margin: 50px auto;
-            border-radius: 8px;
-            box-shadow: 0px 0px 10px gray;
-        }
-        
-        h2 {
-            text-align: center;
-            color: darkblue;
-        }
-        
-        label {
-            font-weight: bold;
-        }
-        
-        input,
-        select {
-            width: 100%;
-            padding: 8px;
-            margin: 8px 0;
-        }
-        
-        button {
-            width: 100%;
-            padding: 10px;
-            background-color: darkblue;
-            color: white;
-            border: none;
-            font-size: 16px;
-            cursor: pointer;
-        }
-        
-        button:hover {
-            background-color: green;
-        }
-    </style>
+    <title>User Registration</title>
 </head>
+<body align="center">
+    <h2>User Registration Form</h2>
+    <form action="register.php" method="POST">
 
-<body>
+        <label>Username:</label><br>
+        <input type="text" name="name" required><br><br>
 
-    <div class="container">
-        <h2>Cyber Security Awareness Registration</h2>
+        <label>Password:</label><br>
+        <input type="password" name="password" required><br><br>
 
-        <form>
-            <label>Full Name</label>
-            <input type="text" placeholder="Enter your name" required>
+        <input type="submit" value="Register">
 
-            <label>Email</label>
-            <input type="email" placeholder="Enter your email" required>
-
-            <label>Password</label>
-            <input type="password" placeholder="Create password" required>
-
-            <label>Gender</label>
-            <select>
-            <option>Select</option>
-            <option>Male</option>
-            <option>Female</option>
-            <option>Other</option>
-        </select>
-
-            <label>Course / Profession</label>
-            <input type="text" placeholder="Student / Employee">
-
-            <label>Interested Topic</label>
-            <select>
-            <option>Phishing Awareness</option>
-            <option>Cyber Crimes</option>
-            <option>Password Security</option>
-            <option>Online Safety</option>
-        </select>
-
-            <button type="submit">Register</button>
-        </form>
-    </div>
+    </form>
 
 </body>
-
 </html>
