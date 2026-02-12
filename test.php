@@ -1,7 +1,7 @@
 <?php
 echo "<h2>PART-A</h2>"."<br>";
 echo "My name is chilakamma I am very good girl"."<br>";
-echo "PHP is working successfully"."<br>";
+//echo "PHP is working successfully"."<br>";
 echo "Hello world"."<br>"."<br>";
 //types of String
 echo "<h3>Types of String</h3>";
