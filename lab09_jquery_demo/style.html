@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Style Manipulation - jQuery Demo</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+    <header><h1>jQuery Style Manipulation</h1></header>
+    <div class="nav-bar">
+        <a href="index.html">Home</a>
+        <a href="selectors.html">Selectors</a>
+        <a href="attributes.html">Attributes</a>
+        <a href="events.html">Events & UI</a>
+        <a href="style.html" class="active">Style Manip</a>
+        <a href="traversing.html">DOM Traversal</a>
+        <a href="effects.html">Effects</a>
+    </div>
+
+    <div class="container" style="text-align:center;">
+        <h2>Applying and Removing CSS dynamically</h2>
+        
+        <div id="target-style" class="box" style="margin:20px auto; width:50%; transition:0.3s;">
+            I am a regular box. Apply styles to me!
+        </div>
+
+        <button id="add-style" class="btn success">Apply Mutiple CSS Properties</button>
+        <button id="remove-style" class="btn danger">Remove All Inline Styles `.removeAttr()`</button>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            $('#add-style').click(function(){
+                // Applying multiple CSS properties at once using JSON object structure
+                $('#target-style').css({
+                    'background-color': '#8b5cf6',
+                    'color': '#ffffff',
+                    'font-size': '20px',
+                    'border-radius': '25px',
+                    'padding': '40px',
+                    'transform': 'scale(1.1)',
+                    'box-shadow': '0px 10px 15px rgba(0,0,0,0.2)'
+                }).html("<b>Wow! Look at these dynamic styles!</b>");
+            });
+
+            $('#remove-style').click(function(){
+                // Removing style attribute completely
+                $('#target-style')
+                    .removeAttr('style')
+                    .html("Styles stripped! Back to purely external CSS rules.");
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selectors - jQuery Demo</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+    <header><h1>jQuery Selectors</h1></header>
+    <div class="nav-bar">
+        <a href="index.html">Home</a>
+        <a href="selectors.html" class="active">Selectors</a>
+        <a href="attributes.html">Attributes</a>
+        <a href="events.html">Events & UI</a>
+        <a href="style.html">Style Manip</a>
+        <a href="traversing.html">DOM Traversal</a>
+        <a href="effects.html">Effects</a>
+    </div>
+
+    <div class="container">
+        <h2>Demonstrating `$('#id')`, `$('.class')`, and `$('element')`</h2>
+        
+        <p id="target-id" class="box">I have the ID <code>#target-id</code>.</p>
+        <p class="target-class box">I have the Class <code>.target-class</code>.</p>
+        <p class="target-class box">I also have the Class <code>.target-class</code>.</p>
+        <span class="box" style="display:block;">I am a <code>&lt;span&gt;</code> element.</span>
+
+        <hr style="margin:20px 0;">
+        <button id="btn-id" class="btn">Select by ID</button>
+        <button id="btn-class" class="btn">Select by Class</button>
+        <button id="btn-element" class="btn">Select by Element (span)</button>
+        <button id="btn-reset" class="btn danger">Reset All</button>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            $('#btn-id').click(function(){
+                $('#target-id').addClass('highlight').html("<b>ID Selected!</b> Using $('#target-id')");
+            });
+
+            $('#btn-class').click(function(){
+                $('.target-class').addClass('highlight').html("<b>Class Selected!</b> Using $('.target-class')");
+            });
+
+            $('#btn-element').click(function(){
+                $('span').addClass('highlight').css('color', 'red');
+            });
+
+            $('#btn-reset').click(function(){
+                location.reload();
+            });
+        });
+    </script>
+</body>
+</html>

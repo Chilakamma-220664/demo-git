@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 09 - jQuery Demo Hub</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>jQuery Full Demonstration</h1>
+        <p>Lab 09 - Master Hub</p>
+    </header>
+
+    <div class="nav-bar">
+        <a href="index.html" class="active">Home</a>
+        <a href="selectors.html">Selectors</a>
+        <a href="attributes.html">Attributes</a>
+        <a href="events.html">Events & UI</a>
+        <a href="style.html">Style Manip</a>
+        <a href="traversing.html">DOM Traversal</a>
+        <a href="effects.html">Effects</a>
+    </div>
+
+    <div class="container">
+        <h2>Welcome to the jQuery Interactive Hub</h2>
+        <p>Please use the navigation bar above to explore different features of the jQuery Library systematically.</p>
+        
+        <div class="box fade-box" style="margin-top:40px; text-align:center;">
+            <h3>Scroll down to test the Custom Plugin!</h3>
+            <p>↓</p><p>↓</p><p>↓</p><p>↓</p><p>↓</p><p>↓</p><p>↓</p>
+            <p>Keep going...</p>
+            <p>↓</p><p>↓</p><p>↓</p><p>↓</p><p>↓</p><p>↓</p><p>↓</p>
+        </div>
+
+        <div class="box fade-box" style="background:#cbd5e1; border:2px dashed #475569;">
+            <h3>Hello! I faded in using `$.fn.scrollFX`!</h3>
+            <p>This custom jQuery plugin fires dynamically when elements enter the viewport!</p>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            // Initiate custom plugin on these boxes
+            $('.fade-box').scrollFX({opacityTarget: 1, speed: 1200});
+        });
+    </script>
+</body>
+</html>

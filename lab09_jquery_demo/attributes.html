@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attributes - jQuery Demo</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+    <header><h1>jQuery Attributes</h1></header>
+    <div class="nav-bar">
+        <a href="index.html">Home</a>
+        <a href="selectors.html">Selectors</a>
+        <a href="attributes.html" class="active">Attributes</a>
+        <a href="events.html">Events & UI</a>
+        <a href="style.html">Style Manip</a>
+        <a href="traversing.html">DOM Traversal</a>
+        <a href="effects.html">Effects</a>
+    </div>
+
+    <div class="container" style="text-align:center;">
+        <h2>Dynamic Manipulation using `.attr()` chaining</h2>
+        
+        <img id="demo-img" src="https://via.placeholder.com/150/0000FF/808080 ?Text=Initial" alt="Blue Square" width="150" style="border-radius:10px; margin:20px;">
+        
+        <br>
+        <button id="change-attr" class="btn">Change SRC, ALT & Width properties</button>
+        
+        <div id="attr-output" class="box" style="margin-top:20px; text-align:left;">
+            Click button to see attribute values here...
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            $('#change-attr').click(function(){
+                // Method Chaining multiple attribute changes
+                $('#demo-img')
+                    .attr('src', 'https://via.placeholder.com/300/FF0000/FFFFFF ?Text=Chained')
+                    .attr('alt', 'Red Rectangle Modified')
+                    .attr('width', '300');
+                
+                // Retrieving to prove it worked
+                let newSrc = $('#demo-img').attr('src');
+                let newAlt = $('#demo-img').attr('alt');
+                let newWidth = $('#demo-img').attr('width');
+
+                $('#attr-output').html(
+                    "<b>Current SRC:</b> " + newSrc + "<br>" +
+                    "<b>Current ALT:</b> " + newAlt + "<br>" +
+                    "<b>Current Width:</b> " + newWidth
+                );
+            });
+        });
+    </script>
+</body>
+</html>

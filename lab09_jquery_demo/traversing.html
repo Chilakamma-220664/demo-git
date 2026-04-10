@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Traversal - jQuery Demo</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+    <header><h1>jQuery DOM Traversal</h1></header>
+    <div class="nav-bar">
+        <a href="index.html">Home</a>
+        <a href="selectors.html">Selectors</a>
+        <a href="attributes.html">Attributes</a>
+        <a href="events.html">Events & UI</a>
+        <a href="style.html">Style Manip</a>
+        <a href="traversing.html" class="active">DOM Traversal</a>
+        <a href="effects.html">Effects</a>
+    </div>
+
+    <div class="container">
+        <h2>Navigating the Document Object Model (DOM) Tree</h2>
+        
+        <div id="grandparent" class="box" style="border:2px solid #94a3b8;">
+            <b>Grandparent Element</b>
+            <div id="parent" class="box" style="border:2px solid #64748b;">
+                <b>Parent Element</b>
+                <p id="child-1" class="box target-me">Child 1 (Target)</p>
+                <p id="child-2" class="box">Child 2 (Sibling)</p>
+                <p id="child-3" class="box">Child 3 (Sibling)</p>
+            </div>
+        </div>
+
+        <button id="btn-parent" class="btn">Highlight `.parent()`</button>
+        <button id="btn-siblings" class="btn">Highlight `.siblings()`</button>
+        <button id="btn-next" class="btn">Highlight `.next()`</button>
+        <button id="btn-children" class="btn">Highlight `.children()` of Parent</button>
+        
+        <button id="btn-reset" class="btn danger" style="float:right;">Reset</button>
+
+        <p id="status-out" style="font-weight:bold; color:#0f172a; margin-top:15px;"></p>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            function clearHighlights() {
+                $('*').removeClass('highlight');
+            }
+
+            $('#btn-parent').click(function(){
+                clearHighlights();
+                let $target = $('.target-me').parent();
+                $target.addClass('highlight');
+                $('#status-out').text("Parent of target is: ID=" + $target.attr('id'));
+            });
+
+            $('#btn-siblings').click(function(){
+                clearHighlights();
+                let $target = $('.target-me').siblings();
+                $target.addClass('highlight');
+                $('#status-out').text("Target has " + $target.length + " siblings total.");
+            });
+
+            $('#btn-next').click(function(){
+                clearHighlights();
+                let $target = $('.target-me').next();
+                $target.addClass('highlight');
+                $('#status-out').text("Next sibling is: ID=" + $target.attr('id'));
+            });
+
+            $('#btn-children').click(function(){
+                clearHighlights();
+                let $target = $('#parent').children();
+                $target.addClass('highlight');
+                $('#status-out').text("Parent has " + ($target.length - 1) + " paragraph children.");
+            });
+
+            $('#btn-reset').click(function() {
+                clearHighlights();
+                $('#status-out').text("");
+            });
+        });
+    </script>
+</body>
+</html>

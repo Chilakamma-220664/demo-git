@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events - jQuery Demo</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script> <!-- Required for Shake Effect -->
+    <script src="script.js"></script>
+</head>
+<body>
+    <header><h1>jQuery Events & UI</h1></header>
+    <div class="nav-bar">
+        <a href="index.html">Home</a>
+        <a href="selectors.html">Selectors</a>
+        <a href="attributes.html">Attributes</a>
+        <a href="events.html" class="active">Events & UI</a>
+        <a href="style.html">Style Manip</a>
+        <a href="traversing.html">DOM Traversal</a>
+        <a href="effects.html">Effects</a>
+    </div>
+
+    <div class="container">
+        <h2>Click, Focus, Blur & UI Effects</h2>
+
+        <div id="click-box" class="box" style="cursor:pointer; user-select:none;">
+            <b>Click Me!</b> I will toggle backgrounds.
+        </div>
+
+        <button id="reset-box" class="btn info">Fade Reset Box</button>
+
+        <hr style="margin:30px 0;">
+
+        <h3>Form Validation with `.effect('shake')`</h3>
+        <label>Type 'jQuery' exactly:</label><br>
+        <input type="text" id="shake-input" placeholder="Enter text and click away...">
+        <p id="msg" style="color:red; display:none;">Invalid! Use 'jQuery'</p>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            // Click Event Toggle
+            $('#click-box').on('click', function(){
+                $(this).toggleClass('highlight');
+                if($(this).hasClass('highlight')) {
+                    $(this).html("<b>Background ON.</b> Click again to revert.");
+                } else {
+                    $(this).html("<b>Background OFF.</b> Click to toggle.");
+                }
+            });
+
+            // Revert with fade animation
+            $('#reset-box').click(function(){
+                $('#click-box').fadeOut(300, function(){
+                    $(this).removeClass('highlight').html("<b>Click Me!</b> I will toggle backgrounds.").fadeIn(300);
+                });
+            });
+
+            // Focus and Blur with Shake Effect
+            $('#shake-input').focus(function(){
+                $(this).css('background', '#e0f2fe');
+            });
+
+            $('#shake-input').blur(function(){
+                $(this).css('background', 'white');
+                if($(this).val() !== 'jQuery' && $(this).val() !== '') {
+                    // Requires jQuery UI
+                    $(this).effect('shake', {distance: 10, times: 3}, 400); 
+                    $(this).css('border-color', 'red');
+                    $('#msg').show();
+                } else if ($(this).val() === 'jQuery') {
+                    $(this).css('border-color', 'green');
+                    $('#msg').hide();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Effects & Animations - jQuery Demo</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+    <header><h1>jQuery Effects & Animations</h1></header>
+    <div class="nav-bar">
+        <a href="index.html">Home</a>
+        <a href="selectors.html">Selectors</a>
+        <a href="attributes.html">Attributes</a>
+        <a href="events.html">Events & UI</a>
+        <a href="style.html">Style Manip</a>
+        <a href="traversing.html">DOM Traversal</a>
+        <a href="effects.html" class="active">Effects</a>
+    </div>
+
+    <div class="container">
+        <h2>Basic `.slideToggle()` and `.fadeToggle()`</h2>
+        <button id="toggle-slide" class="btn">Slide Toggle Text</button>
+        <button id="toggle-fade" class="btn info">Fade Toggle Text</button>
+        <div id="panel" class="box" style="margin-top:10px;">
+            This panel reacts to sliding and fading built-in jQuery effects!
+        </div>
+
+        <hr style="margin:40px 0;">
+
+        <h2>Custom `.animate()` Progress Bar</h2>
+        <button id="start-progress" class="btn success">Start Upload Animation</button>
+        <div class="progress-container">
+            <div id="my-bar" class="progress-bar">0%</div>
+        </div>
+
+        <hr style="margin:40px 0;">
+
+        <h2>Advanced Custom Animation: Typing Effect</h2>
+        <button id="type-btn" class="btn">Simulate Typing</button>
+        <p id="type-output" class="box" style="height:50px; font-family:monospace; font-size:16px;"></p>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            // 1. Toggles
+            $('#toggle-slide').click(function(){
+                $('#panel').slideToggle('slow');
+            });
+            $('#toggle-fade').click(function(){
+                $('#panel').fadeToggle(1000); // 1 sec fade
+            });
+
+            // 2. Animate Progress Bar
+            $('#start-progress').click(function(){
+                $('#my-bar').css('width', '0%').text('0%'); // Reset
+                
+                $('#my-bar').animate({
+                    width: '100%'
+                }, {
+                    duration: 2000,
+                    step: function(now, fx) {
+                        // 'now' contains current width percentage during animation
+                        $(this).text(Math.round(now) + '%');
+                    },
+                    complete: function() {
+                        $(this).text('Upload Complete!');
+                    }
+                });
+            });
+
+            // 3. Simulated Typing Effect via iteration and delays
+            const secretData = "console.log('jQuery Animations are extremely powerful!');";
+            $('#type-btn').click(function(){
+                $('#type-output').empty();
+                $.each(secretData.split(''), function(i, letter) {
+                    setTimeout(function() {
+                        $('#type-output').append(letter);
+                    }, 50 * i);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
