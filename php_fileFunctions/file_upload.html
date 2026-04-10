@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>File-upload Form</title>
+</head>
+<body>
+<center><h1>User_Registration</h1></center>
+<center>
+<div>
+<form
+action="file_download.php"
+method="post"
+enctype="multipart/form-data"
+onsubmit="return checkPassword()"
+>
+First name:
+<input type="text" name="fname" required /> <br /><br />
+Last name:
+<input type="text" name="lname" required /><br /><br />
+Email:
+<input type="email" name="mail" required /> <br /><br />
+Password:
+<input type="password" name="fpass" /><br /><br />
+Re-enter password:
+<input type="password" name="lpass" /> <br><br>
+File_upload:
+<input type="file" name="fileupload" required /><br /><br />
+<input type="submit" value="register" name="upload" />
+</form>
+</div>
+</center>
+<script>
+function checkPassword() {
+let p1 = document.getElementsByName("fpass")[0].value;
+let p2 = document.getElementsByName("lpass")[0].value;
+if (p1 === p2) {
+return true;
+} else {
+alert("Password not matched!")
+return false;
+}
+}
+</script>
+</body>
+</html>
