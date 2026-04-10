@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 06 - GitHub OAuth</title>
+    <style>
+        body { font-family: 'Inter', sans-serif; background: #0d1117; color: white; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0; }
+        .card { background: #161b22; padding: 40px; border-radius: 12px; text-align: center; border: 1px solid #30363d; box-shadow: 0 4px 12px rgba(0,0,0,0.5); }
+        h1 { margin-top: 0; }
+        .btn { display: inline-block; padding: 12px 24px; background: #238636; color: white; text-decoration: none; border-radius: 6px; font-weight: bold; margin-top: 20px; transition: 0.3s; border: none; cursor: pointer; }
+        .btn:hover { background: #2ea043; }
+        .github-icon { width: 24px; vertical-align: middle; margin-right: 8px; filter: invert(1); }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Welcome to GitHub OAuth</h1>
+        <p>Lab-06 Single Sign-On (SSO) Demonstration</p>
+        <% if (!user) { %>
+            <a href="/auth/github" class="btn">
+                <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" class="github-icon" alt="GitHub">
+                Sign in with GitHub
+            </a>
+        <% } else { %>
+            <p>You are already logged in!</p>
+            <a href="/profile" class="btn">Go to Profile</a>
+        <% } %>
+    </div>
+</body>
+</html>
