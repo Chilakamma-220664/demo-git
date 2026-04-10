@@ -1,0 +1,92 @@
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8fafc;
+    color: #334155;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #0f172a;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.nav-bar {
+    background-color: #1e293b;
+    padding: 15px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.nav-bar a {
+    color: #cbd5e1;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 600;
+}
+
+.nav-bar a:hover, .nav-bar a.active {
+    color: #38bdf8;
+}
+
+/* Sticky Class triggered by jQuery */
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+}
+
+.btn {
+    background: #3b82f6;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    margin-top: 10px;
+}
+.btn:hover { background: #2563eb; }
+
+.box {
+    padding: 20px;
+    background: #e2e8f0;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 2px solid transparent;
+}
+
+.highlight {
+    background-color: #fef08a !important;
+    border-color: #eab308 !important;
+}
+
+.progress-container {
+    width: 100%;
+    background: #e2e8f0;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 20px;
+}
+.progress-bar {
+    width: 0%;
+    height: 30px;
+    background: #10b981;
+    text-align: center;
+    color: white;
+    line-height: 30px;
+}
