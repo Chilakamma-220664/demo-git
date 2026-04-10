@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 07 - Product Manager</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Product Management System</h1>
+            <p>MongoDB Full-Stack Application (Lab 07)</p>
+        </header>
+
+        <section class="add-section card">
+            <h2>Add New Product</h2>
+            <form id="add-form">
+                <input type="text" id="name" placeholder="Product Name" required>
+                <input type="text" id="category" placeholder="Category" required>
+                <input type="number" id="price" placeholder="Price" required>
+                <input type="number" id="stock" placeholder="Stock" required>
+                <button type="submit" class="btn primary">Add Product</button>
+            </form>
+        </section>
+
+        <section class="products-section card">
+            <h2>Current Inventory</h2>
+            <table id="products-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Category</th>
+                        <th>Price</th>
+                        <th>Stock</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="products-body">
+                    <!-- Products rendered dynamically -->
+                </tbody>
+            </table>
+        </section>
+
+        <section class="analytics-section card">
+            <h2>Data Analytics (MongoDB Aggregations)</h2>
+            <button id="btn-analytics" class="btn">Generate Analytics</button>
+            <button id="btn-query" class="btn info">Measure Query Execution Time</button>
+            <pre id="analytics-output">Analytics output will appear here...</pre>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
